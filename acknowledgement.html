@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acknowledgement</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Office of the Fantasy Commissioner</h1>
+</header>
+
+<div class="form-container">
+
+<h2>Application Submitted Successfully</h2>
+
+<p><strong>Reference Number:</strong></p>
+
+<h3 id="referenceNo"></h3>
+
+<p>
+Keep this reference number safe.
+</p>
+
+<button onclick="downloadAck()">
+Download Acknowledgement
+</button>
+
+</div>
+
+<script>
+
+const ref =
+localStorage.getItem("latestReference");
+
+document.getElementById("referenceNo")
+.innerText = ref;
+
+function downloadAck(){
+
+window.print();
+
+}
+
+</script>
+
+</body>
+</html>
