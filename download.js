@@ -14,9 +14,10 @@ document.getElementById(
 if(!data){
 
 result.innerHTML =
-"Certificate Not Found";
+"Application Not Found";
 
 return;
+
 }
 
 let app =
@@ -25,22 +26,60 @@ JSON.parse(data);
 if(app.status !== "Approved"){
 
 result.innerHTML =
-"Certificate Not Approved Yet";
+"Certificate Not Available";
 
 return;
+
 }
 
 result.innerHTML = `
-<hr>
+
+<div class="certificate-box">
+
+<h2>
+OFFICE OF THE FANTASY COMMISSIONER
+</h2>
+
+<h3>
+${app.certificateType}
+</h3>
 
 <p>
 Certificate Number:
 ${app.certificateNumber}
 </p>
 
+<p>
+This certifies that
+</p>
+
+<h2>
+${app.name}
+</h2>
+
+<p>
+Issue Date:
+${app.issueDate}
+</p>
+
+<br>
+
+<p>
+Digitally Signed By
+</p>
+
+<b>
+Bijay Saha, IFunS
+</b>
+
+<br><br>
+
 <button onclick="window.print()">
-Download Certificate
+Download PDF
 </button>
+
+</div>
+
 `;
 
 }
