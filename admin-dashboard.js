@@ -61,3 +61,73 @@ Reject
 }
 
 }
+function approveApplication(ref){
+
+let app =
+JSON.parse(
+localStorage.getItem(ref)
+);
+
+let editedName =
+prompt(
+"Edit name if needed",
+app.name
+);
+
+if(editedName){
+
+app.name =
+editedName;
+
+}
+
+app.status =
+"Approved";
+
+app.certificateNumber =
+"FC-" +
+new Date().getFullYear() +
+"-" +
+Math.floor(
+10000 +
+Math.random()*90000
+);
+
+app.issueDate =
+new Date().toLocaleDateString();
+
+localStorage.setItem(
+ref,
+JSON.stringify(app)
+);
+
+alert(
+"Application Approved"
+);
+
+loadApplications();
+
+}
+
+function rejectApplication(ref){
+
+let app =
+JSON.parse(
+localStorage.getItem(ref)
+);
+
+app.status =
+"Rejected";
+
+localStorage.setItem(
+ref,
+JSON.stringify(app)
+);
+
+alert(
+"Application Rejected"
+);
+
+loadApplications();
+
+}
