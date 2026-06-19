@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Certificate</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Office of the Fantasy Commissioner</h1>
+    <p>Certificate Application Form</p>
+</header>
+
+<div class="form-container">
+
+    <h2>Apply for Certificate</h2>
+
+    <form id="applicationForm">
+
+        <label>Certificate Type *</label>
+        <input type="text" id="certificateType" readonly>
+
+        <label>Full Name *</label>
+        <input type="text" id="name">
+
+        <label>Father's Name *</label>
+        <input type="text" id="fatherName">
+
+        <label>Date of Birth *</label>
+        <input type="date" id="dob">
+
+        <label>Address *</label>
+        <textarea id="address"></textarea>
+
+        <label>Phone Number *</label>
+        <input type="tel" id="phone">
+
+        <button type="submit">
+            Submit Application
+        </button>
+
+    </form>
+
+</div>
+
+<script src="apply.js"></script>
+
+</body>
+</html>
